@@ -1,0 +1,1040 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="fonts.google.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="引用块在文章中插入引言，可以包含作者，来源和标题
+格式如下：(官方的文档，我都不想吐槽了)
+{% blockquote [source],[auhor] [link] [source_lik_title] %}
+       content
+{% endblockquote %}
+
+source代表引用块的来源，例如：《人性的弱点》
+author代表引用块的作者 例如：卡耐斯基
+link代表引用快">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写作相关(1)-Hexo标签插件的使用">
+<meta property="og:url" content="http://yoursite.com/2016/12/15/写作相关(1)-Hexo标签插件的使用/index.html">
+<meta property="og:site_name" content="歇斯底里 摧枯拉朽">
+<meta property="og:description" content="引用块在文章中插入引言，可以包含作者，来源和标题
+格式如下：(官方的文档，我都不想吐槽了)
+{% blockquote [source],[auhor] [link] [source_lik_title] %}
+       content
+{% endblockquote %}
+
+source代表引用块的来源，例如：《人性的弱点》
+author代表引用块的作者 例如：卡耐斯基
+link代表引用快">
+<meta property="og:image" content="http://yoursite.com/resources/images/youtubevIdeoID.png">
+<meta property="og:image" content="http://yoursite.com/resources/images/google.png">
+<meta property="og:image" content="http://yoursite.com/resources/images/google.png">
+<meta property="og:image" content="http://yoursite.com/resources/images/google.png">
+<meta property="og:image" content="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+<meta property="og:image" content="http://yoursite.com/2016/12/15/写作相关(1)-Hexo标签插件的使用/google.png">
+<meta property="og:image" content="http://yoursite.com/2016/12/15/写作相关(1)-Hexo标签插件的使用/functional-swift-cn-2016-06-07.pdf">
+<meta property="og:updated_time" content="2016-12-25T12:19:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="写作相关(1)-Hexo标签插件的使用">
+<meta name="twitter:description" content="引用块在文章中插入引言，可以包含作者，来源和标题
+格式如下：(官方的文档，我都不想吐槽了)
+{% blockquote [source],[auhor] [link] [source_lik_title] %}
+       content
+{% endblockquote %}
+
+source代表引用块的来源，例如：《人性的弱点》
+author代表引用块的作者 例如：卡耐斯基
+link代表引用快">
+<meta name="twitter:image" content="http://yoursite.com/resources/images/youtubevIdeoID.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'YUZRY20OHA',
+      apiKey: '33e77ba668ada417619c33faf69733d7',
+      indexName: 'Tech_cnicetoupp',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/15/写作相关(1)-Hexo标签插件的使用/"/>
+
+
+
+
+
+  <title> 写作相关(1)-Hexo标签插件的使用 | 歇斯底里 摧枯拉朽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">歇斯底里 摧枯拉朽</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">战士</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">  
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/写作相关(1)-Hexo标签插件的使用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="超CniceToUpp">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="歇斯底里 摧枯拉朽">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="歇斯底里 摧枯拉朽" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                写作相关(1)-Hexo标签插件的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T20:01:27+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/15/写作相关(1)-Hexo标签插件的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/15/写作相关(1)-Hexo标签插件的使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h1><p>在文章中插入引言，可以包含作者，来源和标题</p>
+<p>格式如下：(官方的文档，我都不想吐槽了)</p>
+<pre><code>{% blockquote [source],[auhor] [link] [source_lik_title] %}
+       content
+{% endblockquote %}
+
+source代表引用块的来源，例如：《人性的弱点》
+author代表引用块的作者 例如：卡耐斯基
+link代表引用快的链接 例如：www.rxdrd.com
+source_link_title代表地引用块的链接标题 例如：人性的弱点
+</code></pre><p>样例：</p>
+<p><strong>引用书上的句子</strong></p>
+<p>格式：</p>
+<pre><code>{% blockquote [source],[author] %}
+    content
+{% endblockquote %}
+</code></pre><p>显示效果：</p>
+<pre><code>{% blockquote Wide Awake, David Levithan %}
+    Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+{% endblockquote %}
+</code></pre><blockquote><p>Do not just seek happiness for yourself. Seek           happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>Wide Awake</strong><cite>David Levithan</cite></footer></blockquote>
+<p><strong>引用网络上的文章</strong></p>
+<p>格式：</p>
+<pre><code>{% blockquote [source],[author] [link] [source_link_title]  %}
+    content
+{% endblockquote %}
+</code></pre><p>显示效果：</p>
+<pre><code>{% blockquote Seth Godin,hechao http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
+    Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
+
+source为Seth Godin
+</code></pre><blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin,hechao</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><p>有三种方式去实现在文章中插入代码块，效果一样，随自己心情取一种。第三种有个不好的地方是，在代码的最右上方不能指定文字和对应的url</p>
+<h2 id="第一种格式"><a href="#第一种格式" class="headerlink" title="第一种格式"></a>第一种格式</h2><p>格式：</p>
+<pre><code>{% codeblock [title] [lang:language] [url] [link text] %}
+
+    code snippet
+
+{% endcodeblock %}
+</code></pre><p>显示效果：</p>
+<pre><code>{% codeblock objective-C lang:objc https://github.com/rs/SDWebImage/blob/master/Examples/SDWebImage%20Demo/AppDelegate.m SDWebImage link %}
+    code snippet
+{% endcodeblock %}
+</code></pre><figure class="highlight objc"><figcaption><span>objective-C</span><a href="https://github.com/rs/SDWebImage/blob/master/Examples/SDWebImage%20Demo/AppDelegate.m" target="_blank" rel="external">view source</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * file that was distributed with this source code.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"AppDelegate.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"MasterViewController.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/SDImageCache.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> window = _window;</div><div class="line"><span class="keyword">@synthesize</span> navigationController = _navigationController;</div><div class="line"></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    <span class="comment">//Add a custom read-only cache path</span></div><div class="line">    <span class="built_in">NSString</span> *bundledPath = [[<span class="built_in">NSBundle</span> mainBundle].resourcePath stringByAppendingPathComponent:<span class="string">@"CustomPathImages"</span>];</div><div class="line">    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="第二种格式"><a href="#第二种格式" class="headerlink" title="第二种格式"></a>第二种格式</h2><p>反引号实现代码块</p>
+<p>格式：</p>
+<pre><code>因为三个反引号放在一起会启动代码解析异常，因此利用反斜杠转义反引号字符，所以一个 \` 代表了一个 `
+\`\`\` [language] [title] [url] [link text] 
+
+code snippet
+
+\`\`\`
+</code></pre><p>显示效果：</p>
+<pre><code>\`\`\` objc objective-C https://github.com/rs/SDWebImage/blob/master/Examples/SDWebImage%20Demo/AppDelegate.m view source 
+
+code snippet
+
+\`\`\`
+</code></pre><figure class="highlight objc"><figcaption><span>objective-C</span><a href="https://github.com/rs/SDWebImage/blob/master/Examples/SDWebImage%20Demo/AppDelegate.m" target="_blank" rel="external">view source </a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * file that was distributed with this source code.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"AppDelegate.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">"MasterViewController.h"</span></span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;SDWebImage/SDImageCache.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> window = _window;</div><div class="line"><span class="keyword">@synthesize</span> navigationController = _navigationController;</div><div class="line"></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    <span class="comment">//Add a custom read-only cache path</span></div><div class="line">    <span class="built_in">NSString</span> *bundledPath = [[<span class="built_in">NSBundle</span> mainBundle].resourcePath stringByAppendingPathComponent:<span class="string">@"CustomPathImages"</span>];</div><div class="line">    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="第三种格式-Include-Code"><a href="#第三种格式-Include-Code" class="headerlink" title="第三种格式 Include Code"></a>第三种格式 Include Code</h2><p>在文章中插入代码除了可以使用上面两种方式之外，还可以把整个文件作为代码插入，这样做的好处是作为可运行的代码后续如果修正了bug，重新hexo g一下文章中的代码就会自动更新；不需要每次从文件中拷贝粘贴代码到文章中。</p>
+<h3 id="第一步：配置代码的存放路径"><a href="#第一步：配置代码的存放路径" class="headerlink" title="第一步：配置代码的存放路径"></a>第一步：配置代码的存放路径</h3><p>在hexo的配置文件/_config.yml中看到code_dir参数默认为<code>downloads/code</code>，我把它改成了<code>resources/code</code>,说明所有的code文件都必须存放到/source/resources/code文件夹下。若文件夹不存在，自行创建。</p>
+<h3 id="第二步：在-md文章文件中书写"><a href="#第二步：在-md文章文件中书写" class="headerlink" title="第二步：在.md文章文件中书写"></a>第二步：在.md文章文件中书写</h3><p>格式：</p>
+<pre><code>{% include_code [title] [lang:language] [filename] link linktitle  %}
+[title]:可选，标题名，默认是文件名
+[lang:language]:可选设置语言后，根据不同的语言设置语法高亮
+[filename]： 代码文件名
+</code></pre><p>显示效果：</p>
+<p>EndianUtil.java 存放在 /source/resources/code 目录下</p>
+<pre><code>{% include_code java lang:java EndianUtil.java %}
+</code></pre><figure class="highlight java"><figcaption><span>java</span><a href="/resources/code/EndianUtil.java">view raw</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.microstrategy.dataservice.common;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.nio.ByteBuffer;</div><div class="line"><span class="keyword">import</span> java.nio.ByteOrder;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EndianUtil</span> </span>{</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] byteArrayToIntArray(<span class="keyword">byte</span>[] b, ByteOrder order)</div><div class="line">	{</div><div class="line">	    <span class="keyword">if</span> (b.length % <span class="number">4</span> != <span class="number">0</span>)</div><div class="line">	        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid size of byte[] b"</span>);</div><div class="line">	    </div><div class="line">	    <span class="keyword">final</span> ByteBuffer bb = ByteBuffer.wrap(b);</div><div class="line">	    bb.order(order);</div><div class="line">	    </div><div class="line">	    <span class="keyword">int</span> size = b.length / <span class="number">4</span>;</div><div class="line">	    <span class="keyword">int</span>[] ia = <span class="keyword">new</span> <span class="keyword">int</span>[size];</div><div class="line">	    </div><div class="line">	    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</div><div class="line">	    {</div><div class="line">	        ia[i] = bb.getInt();</div><div class="line">	    }        </div><div class="line">	    <span class="keyword">return</span> ia;</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<h1 id="iFrame"><a href="#iFrame" class="headerlink" title="iFrame"></a>iFrame</h1><p>使用iFrame可以插入网页，视频。</p>
+<h2 id="插入网页"><a href="#插入网页" class="headerlink" title="插入网页"></a>插入网页</h2><p>格式：</p>
+<pre><code>{% iframe url [width] [height] %}
+</code></pre><p>显示效果：</p>
+<pre><code>{% iframe https://github.com/ 700 400 %}
+</code></pre><iframe src="https://github.com/" width="700" height="400" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" width="510" src="https://github.com/" frameborder="0" allowfullscreen></iframe>
+
+
+<h2 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h2><p>除了使用iFrame插入视频，还可以使用Hexo自带的Youtube视频插件和Vimeo视频插件，下章节会讲到。</p>
+<ul>
+<li>优酷视频：在优酷视频网站，找到分享，复制通用代码，并且把代码中的单引号全部转化为双引号，即可。</li>
+<li>youtube :在youtube网站，找到嵌入代码复制，即可。其他网站类似，我就不一一试了。</li>
+<li>allowfullscreen参数：设置是否允许全屏。</li>
+</ul>
+<p>显示效果：<br>显示优酷的视频</p>
+<pre><code>&lt;iframe height=&quot;315&quot; width=&quot;510&quot; src=&quot;http://player.youku.com/embed/XMTg1NDY0ODc1Mg==&quot; frameborder=0     allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre><iframe height="315" width="510" src="http://player.youku.com/embed/XMTg1NDY0ODc1Mg==" frameborder="0" allowfullscreen></iframe>
+
+<p>显示youtube的视频</p>
+<pre><code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xgEa5tsdwYc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;      
+</code></pre><iframe width="560" height="315" src="https://www.youtube.com/embed/xgEa5tsdwYc" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+<h1 id="视频标签插件"><a href="#视频标签插件" class="headerlink" title="视频标签插件"></a>视频标签插件</h1><h2 id="Youtube视频标签插件"><a href="#Youtube视频标签插件" class="headerlink" title="Youtube视频标签插件"></a>Youtube视频标签插件</h2><p>在文章中Hexo自带插入<code>Youtube</code>视频的标签。</p>
+<p>格式：</p>
+<pre><code>{% youtube video_id %}
+</code></pre><p>下图的红色下划线就是video_id</p>
+<img src="/resources/images/youtubevIdeoID.png" width="196" height="50" title="video_id">
+<p>显示效果：<div class="video-container"><iframe src="//www.youtube.com/embed/JwMKRevYa_M" frameborder="0" allowfullscreen></iframe></div></p>
+<h2 id="Vimeo视频标签插件"><a href="#Vimeo视频标签插件" class="headerlink" title="Vimeo视频标签插件"></a>Vimeo视频标签插件</h2><p>在文章中Hexo自带插入<code>Vimeo</code>视频的标签。</p>
+<p>格式：</p>
+<pre><code>{% vimeo video_id %}
+
+video_id意思同Youtube视频Id号一样
+</code></pre><p>显示效果：<div class="video-container"><iframe src="//player.vimeo.com/video/193358188" frameborder="0" allowfullscreen></iframe></div></p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="第一种-Hexo图片标签插件"><a href="#第一种-Hexo图片标签插件" class="headerlink" title="第一种 Hexo图片标签插件"></a>第一种 Hexo图片标签插件</h2><p>在文章中插入<code>指定大小</code>的图片。但是图片只会变大变小，并不会拉伸。</p>
+<p>格式：</p>
+<pre><code>{% img [class names] /path/to/image [width] [height] [title text] [alt text] %}
+
+[class names] 代表 暂时不知道什么意思。暂时不填。
+
+/path/to/image 代表 以/source文件夹为根路径的图片路径 ,例如/source/resource/tag.png是tag.png的所在路径，那么在这里只需要写上/resource/tag.png即可，不能写成/source/resource/tag.png。
+
+[width] 代表图片宽度
+
+[height] 代表图片高度
+
+[title text] 代表图片标题 目前不清楚为啥出现两个title text。
+
+[alt text] 代表图片副标题 目前不清楚为啥出现两个alt text。
+</code></pre><p>显示效果：</p>
+<ul>
+<li><p>指定196*50的图片</p>
+<pre><code>{% img /resources/images/google.png 196 50 googleImage %}
+</code></pre>  <img src="/resources/images/google.png" width="196" height="50" title="googleImage">
+</li>
+</ul>
+<ul>
+<li><p>指定100*100的图片</p>
+<pre><code>{% img /resources/images/google.png 100 100 googleImage %}
+</code></pre>  <img src="/resources/images/google.png" width="100" height="100" title="googleImage">
+</li>
+</ul>
+<h2 id="第二种-markdown默认的插入图片的格式"><a href="#第二种-markdown默认的插入图片的格式" class="headerlink" title="第二种 markdown默认的插入图片的格式"></a>第二种 markdown默认的插入图片的格式</h2><p>这是markdown默认的格式，不过填写图片路径时需要注意：</p>
+<ul>
+<li><p>本地路径 代表 以/source文件夹为根路径的图片路径，同方式一一样。</p>
+<pre><code>![image](/resources/images/google.png)
+</code></pre><p>  <img src="/resources/images/google.png" alt="image"></p>
+</li>
+</ul>
+<ul>
+<li><p>网络路径 代表 一个网络的url</p>
+<pre><code>![image](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png)
+</code></pre><p>  <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h2><p>使用方法在<code>文章资料文件夹</code> 的<code>获取图片资源</code>章节中</p>
+<h1 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h1><p>管理文章资源非常方便</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>可以通过将 config.yml 文件中的 post_asset_folder 选项设为 true 来打开Hexo的资源管理功能。</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>打开之后，我们每次通过<code>hero new post postname</code> 命令的时候 会在<code>_post</code>目录下生成一个postname.md文章文件，和一个与文章文件同名的文件夹，里面可以存放该文章需要的资源，例如图片，pdf等等其他文件。</p>
+<p><strong>获取图片资源</strong></p>
+<ul>
+<li><p>获取 通过<code>hexo generate</code>命令生成后的文件夹（生成之后文件夹为/public文件夹）的所在路径。</p>
+<pre><code>{% asset_path google.png %}
+</code></pre>  /2016/12/15/写作相关(1)-Hexo标签插件的使用/google.png
+</li>
+</ul>
+<ul>
+<li><p>读取资源文件夹内的资源显示在文章中。</p>
+<pre><code>{% asset_img google.png googlImage %}
+</code></pre>  <img src="/2016/12/15/写作相关(1)-Hexo标签插件的使用/google.png" alt="googleImage" title="googleImage">
+</li>
+</ul>
+<ul>
+<li><p>通过点击title获取tag.png资源。   </p>
+<pre><code>{% asset_link google.png googlImage %}
+</code></pre>  <a href="/2016/12/15/写作相关(1)-Hexo标签插件的使用/google.png" title="googleImage">googleImage</a>
+</li>
+</ul>
+<p><strong>获取pdf资源(获取code资源也是如此，与此类推，无法显示的文件，只能通过点击link来获取)</strong></p>
+<ul>
+<li><p>获取 通过<code>hexo generate</code>命令生成后的文件夹的所在路径。</p>
+<pre><code>{% asset_path functional-swift-cn-2016-06-07.pdf %}
+</code></pre>  /2016/12/15/写作相关(1)-Hexo标签插件的使用/functional-swift-cn-2016-06-07.pdf
+</li>
+</ul>
+<ul>
+<li><p>读取资源文件夹内的资源显示在文章中。(因为pdf文件太大，所以无法显示，通过点击显示区域，即可读取此pdf文件)</p>
+<pre><code>{% asset_img functional-swift-cn-2016-06-07.pdf functional-swift %}
+</code></pre>  <img src="/2016/12/15/写作相关(1)-Hexo标签插件的使用/functional-swift-cn-2016-06-07.pdf" alt="functional-swift" title="functional-swift">
+</li>
+</ul>
+<ul>
+<li><p>通过点击title获取tag.png资源。   </p>
+<pre><code>{% asset_link functional-swift-cn-2016-06-07.pdf functional-swift %}
+</code></pre>  <a href="/2016/12/15/写作相关(1)-Hexo标签插件的使用/functional-swift-cn-2016-06-07.pdf" title="functional-swift">functional-swift</a>    
+</li>
+</ul>
+<h1 id="Gist"><a href="#Gist" class="headerlink" title="Gist"></a>Gist</h1><script src="//gist.github.com/gist_id.js?file=[filename]"></script>
+<h1 id="jsFiddle"><a href="#jsFiddle" class="headerlink" title="jsFiddle"></a>jsFiddle</h1><iframe scrolling="no" width="50" height="50" src="http://jsfiddle.net/shorttag/embedded/[tabs]/[skin]" frameborder="0" allowfullscreen></iframe>
+<h1 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h1><h1 id="Raw"><a href="#Raw" class="headerlink" title="Raw"></a>Raw</h1><p>如果您想在文章中插入 Swig 标签，可以尝试使用 Raw 标签，以免发生解析异常。</p>
+<p>格式：</p>
+<pre><code>{% raw %}
+    content
+{% endraw %}
+</code></pre><p>显示效果：</p>
+<pre><code>{% raw %}
+    {% asset_link functional-swift-cn-2016-06-07.pdf title %}
+    {% asset_path google.png %}
+{% endraw %}  
+</code></pre>
+
+{% asset_link functional-swift-cn-2016-06-07.pdf title %}
+
+{% asset_path google.png %}
+
+  
+<h1 id="可以插入音乐"><a href="#可以插入音乐" class="headerlink" title="可以插入音乐"></a>可以插入音乐</h1><p><a href="https://www.zhihu.com/question/50741481" target="_blank" rel="external">https://www.zhihu.com/question/50741481</a></p>
+<h1 id="Pull-Quote"><a href="#Pull-Quote" class="headerlink" title="Pull Quote"></a>Pull Quote</h1><pre><code>{% pullquote  %}
+    content
+    {% endpullquote %}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/12/怎么建立自己的技术博客/" rel="next" title="怎么建立自己的技术博客">
+                <i class="fa fa-chevron-left"></i> 怎么建立自己的技术博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/16/Next主题配置/" rel="prev" title="Next主题配置">
+                Next主题配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="超CniceToUpp" />
+          <p class="site-author-name" itemprop="name">超CniceToUpp</p>
+          <p class="site-description motion-element" itemprop="description">see you again</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/CNiceToUpp" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引用块"><span class="nav-number">1.</span> <span class="nav-text">引用块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码块"><span class="nav-number">2.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种格式"><span class="nav-number">2.1.</span> <span class="nav-text">第一种格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种格式"><span class="nav-number">2.2.</span> <span class="nav-text">第二种格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种格式-Include-Code"><span class="nav-number">2.3.</span> <span class="nav-text">第三种格式 Include Code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：配置代码的存放路径"><span class="nav-number">2.3.1.</span> <span class="nav-text">第一步：配置代码的存放路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：在-md文章文件中书写"><span class="nav-number">2.3.2.</span> <span class="nav-text">第二步：在.md文章文件中书写</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iFrame"><span class="nav-number">3.</span> <span class="nav-text">iFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入网页"><span class="nav-number">3.1.</span> <span class="nav-text">插入网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入视频"><span class="nav-number">3.2.</span> <span class="nav-text">插入视频</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视频标签插件"><span class="nav-number">4.</span> <span class="nav-text">视频标签插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Youtube视频标签插件"><span class="nav-number">4.1.</span> <span class="nav-text">Youtube视频标签插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimeo视频标签插件"><span class="nav-number">4.2.</span> <span class="nav-text">Vimeo视频标签插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入图片"><span class="nav-number">5.</span> <span class="nav-text">插入图片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种-Hexo图片标签插件"><span class="nav-number">5.1.</span> <span class="nav-text">第一种 Hexo图片标签插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种-markdown默认的插入图片的格式"><span class="nav-number">5.2.</span> <span class="nav-text">第二种 markdown默认的插入图片的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种"><span class="nav-number">5.3.</span> <span class="nav-text">第三种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章资源文件夹"><span class="nav-number">6.</span> <span class="nav-text">文章资源文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步"><span class="nav-number">6.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步"><span class="nav-number">6.2.</span> <span class="nav-text">第二步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gist"><span class="nav-number">7.</span> <span class="nav-text">Gist</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jsFiddle"><span class="nav-number">8.</span> <span class="nav-text">jsFiddle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用文章"><span class="nav-number">9.</span> <span class="nav-text">引用文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Raw"><span class="nav-number">10.</span> <span class="nav-text">Raw</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可以插入音乐"><span class="nav-number">11.</span> <span class="nav-text">可以插入音乐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pull-Quote"><span class="nav-number">12.</span> <span class="nav-text">Pull Quote</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">超CniceToUpp</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cnicetoupp';
+      var disqus_identifier = '2016/12/15/写作相关(1)-Hexo标签插件的使用/';
+
+      var disqus_title = "写作相关(1)-Hexo标签插件的使用";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

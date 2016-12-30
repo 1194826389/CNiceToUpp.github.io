@@ -1,0 +1,839 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="fonts.google.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="什么是远程通知？
+顾名思义，就是从远程服务器推送给客户端的通知（需要联网），远程推送服务，又称为APNs(Apple Push Notification Services)
+
+远程通知原理通过图来解释整个远程通知的过程
+
+远程通知怎么用？第一步.安装证书
+aps_production.cer:如果发布的程序包含了推送服务，就必须要安装这个证书
+ios_distribution:让电脑具备发布程序的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS远程推送实现原理">
+<meta property="og:url" content="http://yoursite.com/2016/03/25/iOS远程推送实现原理/index.html">
+<meta property="og:site_name" content="歇斯底里 摧枯拉朽">
+<meta property="og:description" content="什么是远程通知？
+顾名思义，就是从远程服务器推送给客户端的通知（需要联网），远程推送服务，又称为APNs(Apple Push Notification Services)
+
+远程通知原理通过图来解释整个远程通知的过程
+
+远程通知怎么用？第一步.安装证书
+aps_production.cer:如果发布的程序包含了推送服务，就必须要安装这个证书
+ios_distribution:让电脑具备发布程序的">
+<meta property="og:image" content="http://yoursite.com/images/remoteNotification.png">
+<meta property="og:updated_time" content="2016-12-11T05:01:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS远程推送实现原理">
+<meta name="twitter:description" content="什么是远程通知？
+顾名思义，就是从远程服务器推送给客户端的通知（需要联网），远程推送服务，又称为APNs(Apple Push Notification Services)
+
+远程通知原理通过图来解释整个远程通知的过程
+
+远程通知怎么用？第一步.安装证书
+aps_production.cer:如果发布的程序包含了推送服务，就必须要安装这个证书
+ios_distribution:让电脑具备发布程序的">
+<meta name="twitter:image" content="http://yoursite.com/images/remoteNotification.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'YUZRY20OHA',
+      apiKey: '33e77ba668ada417619c33faf69733d7',
+      indexName: 'Tech_cnicetoupp',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/25/iOS远程推送实现原理/"/>
+
+
+
+
+
+  <title> iOS远程推送实现原理 | 歇斯底里 摧枯拉朽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">歇斯底里 摧枯拉朽</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">战士</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">  
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/25/iOS远程推送实现原理/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="超CniceToUpp">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="歇斯底里 摧枯拉朽">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="歇斯底里 摧枯拉朽" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS远程推送实现原理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-25T16:00:32+08:00">
+                2016-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/03/25/iOS远程推送实现原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/25/iOS远程推送实现原理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是远程通知？"><a href="#什么是远程通知？" class="headerlink" title="什么是远程通知？"></a>什么是远程通知？</h1><ul>
+<li>顾名思义，就是从远程服务器推送给客户端的通知（需要联网），远程推送服务，又称为APNs(Apple Push Notification Services)</li>
+</ul>
+<h1 id="远程通知原理"><a href="#远程通知原理" class="headerlink" title="远程通知原理"></a>远程通知原理</h1><p>通过图来解释整个远程通知的过程</p>
+<p><img src="/images/remoteNotification.png" alt="image"></p>
+<h1 id="远程通知怎么用？"><a href="#远程通知怎么用？" class="headerlink" title="远程通知怎么用？"></a>远程通知怎么用？</h1><h2 id="第一步-安装证书"><a href="#第一步-安装证书" class="headerlink" title="第一步.安装证书"></a>第一步.安装证书</h2><ul>
+<li>aps_production.cer:如果发布的程序包含了推送服务，就必须要安装这个证书</li>
+<li>ios_distribution:让电脑具备发布程序的能力</li>
+<li>APP_NAME.mobileprovision：某台电脑就能发布某个程序</li>
+</ul>
+<h2 id="第二步-注册通知"><a href="#第二步-注册通知" class="headerlink" title="第二步.注册通知"></a>第二步.注册通知</h2><p>注册通知的代码是在<em>didFinishlaunchingWithOption</em>方法中，在iOS8之前和之后注册的形式稍许不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</div><div class="line">&#123;</div><div class="line">   </div><div class="line">    if ([UIDevice currentDevice].systemVersion.doubleValue &lt;= 8.0) &#123;</div><div class="line">        // 不是iOS8</div><div class="line">        UIRemoteNotificationType type = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert;</div><div class="line">        // 当用户第一次启动程序时就获取deviceToke</div><div class="line">        // 该方法在iOS8以及过期了</div><div class="line">        // 只要调用该方法, 系统就会自动发送UDID和当前程序的Bunle ID到苹果的APNs服务器</div><div class="line">        [application registerForRemoteNotificationTypes:type];</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        // iOS8</div><div class="line">        UIUserNotificationType type = UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;</div><div class="line"></div><div class="line">        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];</div><div class="line">        // 注册通知类型</div><div class="line">        [application registerUserNotificationSettings:settings];</div><div class="line"></div><div class="line">        // 申请试用通知</div><div class="line">        [application registerForRemoteNotifications];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //注意:当我们调用_application_中_registerForRemoteNotificatioinTypes_(IOS8之前)或者    </div><div class="line">    //_registerForRemoteNotifications_(IOS8之后)这两个函数的时候，系统就会把`手机设备的UDID`和`当前程序</div><div class="line">    //的Bundle ID`发送到苹果的APNs服务器。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="第三步-获取deviceToken"><a href="#第三步-获取deviceToken" class="headerlink" title="第三步.获取deviceToken"></a>第三步.获取deviceToken</h2><p>注册成功之后会调用APPdelegate的didRegisterForRemoteNotificationsWithDeviceTiken方法获得苹果服务器返回的deviceToken</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> *  获取到用户对应当前应用程序的deviceToken时就会调用</div><div class="line"> */</div><div class="line">- (void)application:(UIApplication *)application 9didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</div><div class="line">&#123;</div><div class="line">    NSLog(@&quot;%@&quot;, deviceToken);</div><div class="line">    // &lt;47e58207 31340f18 ed83ba54 f999641a 3d68bc7b f3e2db29 953188ec 7d0cecfb&gt;</div><div class="line">    // &lt;286c3bde 0bd3b122 68be655f 25ed2702 38e31cec 9d54da9f 1c62325a 93be801e&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>获取到deviceToken之后，就需要把deviceToken和用户的标志发送到自己的客户端服务器，存进数据库中</p>
+<h2 id="第四步-通知发送"><a href="#第四步-通知发送" class="headerlink" title="第四步.通知发送"></a>第四步.通知发送</h2><p>如果李四给张三发消息的话,首先发送到自己的服务中,然后去数据库中查询张三的deviceToken,如果找到的话,服务器取回deviceToken，自己的服务器把deviceToken和信息通知苹果服务器，苹果服务器通过deviceToken找到张三的设备，哪个程序，推送过去。</p>
+<h2 id="第五步-苹果服务器推送过来之后"><a href="#第五步-苹果服务器推送过来之后" class="headerlink" title="第五步.苹果服务器推送过来之后"></a>第五步.苹果服务器推送过来之后</h2><ul>
+<li><p>在应用程序是打开状态(前台或者是后台)</p>
+<p>(1)    在iOS7以前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">	/*</div><div class="line"> ios7以前苹果支持多任务, iOS7以前的多任务是假的多任务</div><div class="line"> 而iOS7开始苹果才真正的推出了多任务</div><div class="line"> */</div><div class="line">// 接收到远程服务器推送过来的内容就会调用</div><div class="line">// 注意: 只有应用程序是打开状态(前台/后台), 才会调用该方法</div><div class="line">/// 如果应用程序是关闭状态会调用didFinishLaunchingWithOptions</div><div class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">     如果应用程序在后台 , 只有用户点击了通知之后才会调用</div><div class="line">     如果应用程序在前台, 会直接调用该方法</div><div class="line">     即便应用程序关闭也可以接收到远程通知</div><div class="line">     */</div><div class="line">    NSLog(@&quot;%@&quot;, userInfo);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>(2) 在iOS7以后(包括7.0)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">	//接收到远程服务器推送过来的内容就会调用</div><div class="line">// ios7以后用这个处理后台任务接收到得远程通知</div><div class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">     远程消息数据格式：</div><div class="line">     &#123;&quot;aps&quot; : &#123;&quot;content-available&quot; : 1&#125;,&quot;content-id&quot; : 42&#125; </div><div class="line">     */</div><div class="line">    NSLog(@&quot;%s&quot;,__func__);</div><div class="line">    NSLog(@&quot;%@&quot;, userInfo);</div><div class="line"></div><div class="line">	NSNumber *contentid =  userInfo[@&quot;content-id&quot;];</div><div class="line">    if (contentid) &#123;</div><div class="line">        UILabel *label = [[UILabel alloc] init];</div><div class="line">        label.frame = CGRectMake(0, 250, 200, 200);</div><div class="line">        label.numberOfLines = 0;</div><div class="line">        label.textColor = [UIColor whiteColor];</div><div class="line">        label.text = [NSString stringWithFormat:@&quot;%@&quot;, contentid];</div><div class="line">        label.font = [UIFont systemFontOfSize:30];</div><div class="line">        label.backgroundColor = [UIColor grayColor];</div><div class="line">        [self.window.rootViewController.view addSubview:label];</div><div class="line">        //注意: 在此方法中一定要调用这个调用block, 告诉系统是否处理成功.</div><div class="line">        // 以便于系统在后台更新UI等操作</div><div class="line">        /*</div><div class="line">        执行completionHandler有两个目的</div><div class="line">        1&gt; 系统会估量App消耗的电量，并根据传递的UIBackgroundFetchResult 参数记录新数据是否可用</div><div class="line">        2&gt; 调用完成的处理代码时，应用的界面缩略图会自动更新 </div><div class="line">         注意：接收到远程通知到执行完网络请求之间的时间不能超过30秒</div><div class="line">         </div><div class="line">         UIBackgroundFetchResultNewData, 成功接收到数据</div><div class="line">         UIBackgroundFetchResultNoData, 没有;接收到数据</div><div class="line">         UIBackgroundFetchResultFailed 接收失败</div><div class="line">         */</div><div class="line">        completionHandler(UIBackgroundFetchResultNewData);</div><div class="line">    &#125;else</div><div class="line">    &#123;</div><div class="line">        completionHandler(UIBackgroundFetchResultFailed);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>在应用程序还没打开时<br>接收到apps服务器发过来数据，点击点击通知之后，会调用<strong>didFinishLanuchingWithOptions</strong>方法,从<strong>launchOption</strong>字典中取出UIApplicationLaunchOptionsRemoteNotificationKey对应的userInfo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</div><div class="line">    </div><div class="line">    /*</div><div class="line">    注册通知代码</div><div class="line">    */</div><div class="line">    </div><div class="line">    // 1.取出数据</div><div class="line">    NSDictionary *userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];</div><div class="line">    </div><div class="line">    if (userInfo) &#123;</div><div class="line">        //code</div><div class="line">    &#125;</div><div class="line">    return YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/26/CocoaPods的使用/" rel="prev" title="CocoaPods的使用">
+                CocoaPods的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="超CniceToUpp" />
+          <p class="site-author-name" itemprop="name">超CniceToUpp</p>
+          <p class="site-description motion-element" itemprop="description">see you again</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/CNiceToUpp" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是远程通知？"><span class="nav-number">1.</span> <span class="nav-text">什么是远程通知？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程通知原理"><span class="nav-number">2.</span> <span class="nav-text">远程通知原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程通知怎么用？"><span class="nav-number">3.</span> <span class="nav-text">远程通知怎么用？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步-安装证书"><span class="nav-number">3.1.</span> <span class="nav-text">第一步.安装证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步-注册通知"><span class="nav-number">3.2.</span> <span class="nav-text">第二步.注册通知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步-获取deviceToken"><span class="nav-number">3.3.</span> <span class="nav-text">第三步.获取deviceToken</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步-通知发送"><span class="nav-number">3.4.</span> <span class="nav-text">第四步.通知发送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步-苹果服务器推送过来之后"><span class="nav-number">3.5.</span> <span class="nav-text">第五步.苹果服务器推送过来之后</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">超CniceToUpp</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cnicetoupp';
+      var disqus_identifier = '2016/03/25/iOS远程推送实现原理/';
+
+      var disqus_title = "iOS远程推送实现原理";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>
