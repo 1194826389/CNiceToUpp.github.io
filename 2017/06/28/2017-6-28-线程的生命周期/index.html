@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -108,24 +108,33 @@
 
 
 
-<meta name="description" content="注册Algolia,创建Index前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。
-安装Hexo Algo">
+<meta name="description" content="线程的生命周期线程的生命周期：一个线程从创建到消亡的过程。（包括同步时的状态变化）
+
+
+创建状态（new）：当用new操作符创建一个新的线程对象时，该线程处于创建状态。处于创建状态的线程只是一个空的线程对象，系统不为它分配资源。
+
+可运行状态（就绪状态Runable）：执行线程的start()方法将为线程分配必须的系统资源，安排其运行，并调用线程体——run()方法，这样就使得该线程处于可运行状态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo主题之Algolia搜索集成">
-<meta property="og:url" content="http://yoursite.com/2016/12/25/Hexo主题之Algolia搜索集成/index.html">
+<meta property="og:title" content="线程的生命周期">
+<meta property="og:url" content="http://yoursite.com/2017/06/28/2017-6-28-线程的生命周期/index.html">
 <meta property="og:site_name" content="歇斯底里 摧枯拉朽">
-<meta property="og:description" content="注册Algolia,创建Index前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。
-安装Hexo Algo">
-<meta property="og:image" content="http://yoursite.com/resources/images/Algolia_API_key.png">
-<meta property="og:image" content="http://yoursite.com/resources/images/algolia_command.png">
-<meta property="og:image" content="http://yoursite.com/resources/images/themeConfig_algolia_search.png">
-<meta property="og:image" content="http://yoursite.com/resources/images/search.png">
-<meta property="og:updated_time" content="2016-12-27T12:50:42.000Z">
+<meta property="og:description" content="线程的生命周期线程的生命周期：一个线程从创建到消亡的过程。（包括同步时的状态变化）
+
+
+创建状态（new）：当用new操作符创建一个新的线程对象时，该线程处于创建状态。处于创建状态的线程只是一个空的线程对象，系统不为它分配资源。
+
+可运行状态（就绪状态Runable）：执行线程的start()方法将为线程分配必须的系统资源，安排其运行，并调用线程体——run()方法，这样就使得该线程处于可运行状态">
+<meta property="og:image" content="http://yoursite.com/resources/images/threadlifecycle.png">
+<meta property="og:updated_time" content="2017-06-28T03:31:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo主题之Algolia搜索集成">
-<meta name="twitter:description" content="注册Algolia,创建Index前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。
-安装Hexo Algo">
-<meta name="twitter:image" content="http://yoursite.com/resources/images/Algolia_API_key.png">
+<meta name="twitter:title" content="线程的生命周期">
+<meta name="twitter:description" content="线程的生命周期线程的生命周期：一个线程从创建到消亡的过程。（包括同步时的状态变化）
+
+
+创建状态（new）：当用new操作符创建一个新的线程对象时，该线程处于创建状态。处于创建状态的线程只是一个空的线程对象，系统不为它分配资源。
+
+可运行状态（就绪状态Runable）：执行线程的start()方法将为线程分配必须的系统资源，安排其运行，并调用线程体——run()方法，这样就使得该线程处于可运行状态">
+<meta name="twitter:image" content="http://yoursite.com/resources/images/threadlifecycle.png">
 
 
 
@@ -153,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/25/Hexo主题之Algolia搜索集成/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/28/2017-6-28-线程的生命周期/"/>
 
 
 
 
 
-  <title> Hexo主题之Algolia搜索集成 | 歇斯底里 摧枯拉朽 </title>
+  <title> 线程的生命周期 | 歇斯底里 摧枯拉朽 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +337,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/Hexo主题之Algolia搜索集成/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/28/2017-6-28-线程的生命周期/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="超CniceToUpp">
@@ -352,7 +361,7 @@
             
             
               
-                Hexo主题之Algolia搜索集成
+                线程的生命周期
               
             
           </h1>
@@ -365,8 +374,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T14:37:07+08:00">
-                2016-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-28T14:37:07+08:00">
+                2017-06-28
               </time>
             
 
@@ -384,8 +393,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/Java开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Java开发</span>
                   </a>
                 </span>
 
@@ -399,8 +408,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/25/Hexo主题之Algolia搜索集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/25/Hexo主题之Algolia搜索集成/" itemprop="commentCount"></span>
+                <a href="/2017/06/28/2017-6-28-线程的生命周期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/28/2017-6-28-线程的生命周期/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -426,42 +435,31 @@
       
 
       
-        <h1 id="注册Algolia-创建Index"><a href="#注册Algolia-创建Index" class="headerlink" title="注册Algolia,创建Index"></a>注册Algolia,创建Index</h1><p>前往 <a href="https://www.algolia.com/" target="_blank" rel="external">Algolia 注册页面</a>，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。</p>
-<h1 id="安装Hexo-Algol插件"><a href="#安装Hexo-Algol插件" class="headerlink" title="安装Hexo Algol插件"></a>安装Hexo Algol插件</h1><p>Index 创建完成后，此时这个 Index 里未包含任何数据。 接下来需要安装 Hexo Algolia 扩展， 这个扩展的功能是搜集站点的内容并通过 API 发送给 Algolia。前往站点根目录，执行命令安装：</p>
-<p><code>npm install --save hexo-algolia</code></p>
-<h1 id="获取-Key-更新站点配置"><a href="#获取-Key-更新站点配置" class="headerlink" title="获取 Key,更新站点配置"></a>获取 Key,更新站点配置</h1><p>在 Algolia 服务站点上找到需要使用的一些配置的值，包括 ApplicationID、Search API Key、 Admin API Key。注意，Admin API Key 需要保密保存。</p>
-<img src="/resources/images/Algolia_API_key.png" width="400" height="400" title="Algolia_Key_API">
-<p>编辑<code>站点配置文件</code>，新增以下配置：</p>
-<pre><code>algolia:
-  applicationID: &apos;applicationID&apos;
-  apiKey: &apos;apiKey&apos;
-  adminApiKey: &apos;adminApiKey&apos;
-  indexName: &apos;indexName&apos;
-  chunkSize: 5000
-  fields:
-    - title
-    - slug
-    - path
-    - content:strip
-</code></pre><p>替换除了 chunkSize 和 fields 以外的其他字段为在 Algolia 获取到的值。field 代表所搜索的范围。</p>
-<h1 id="更新Index"><a href="#更新Index" class="headerlink" title="更新Index"></a>更新Index</h1><p>当配置完成，在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。注意：在执行<code>hexo algolia</code>命令之前先执行<code>hexo clean</code>，以避免algolia index 没有获取到最新的文章信息。请注意观察命令的输出。</p>
-<img src="/resources/images/algolia_command.png" width="400" height="400" title="执行hexo algolia命令">
-<h1 id="更新主题配置"><a href="#更新主题配置" class="headerlink" title="更新主题配置"></a>更新主题配置</h1><img src="/resources/images/themeConfig_algolia_search.png" width="400" height="400" title="algolia search主题配置">
-<p>将 enable 改为 true 即可，根据需要你可以调整 labels 中的文本。</p>
-<h1 id="其他注意点"><a href="#其他注意点" class="headerlink" title="其他注意点"></a>其他注意点</h1><h2 id="注意一"><a href="#注意一" class="headerlink" title="注意一"></a>注意一</h2><p>在themes\next\layout_partials中找到header.swig，找到以下代码并修改</p>
-<figure class="highlight plain"><figcaption><span>header.swig </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;% if hasSearch %&#125;</div><div class="line">&lt;li class=&quot;menu-item menu-item-search&quot;&gt;</div><div class="line">    &#123;% if theme.swiftype_key %&#125;</div><div class="line">    &lt;a href=&quot;javascript:;&quot; class=&quot;st-search-show-outputs&quot;&gt;</div><div class="line">    &#123;% elseif config.search %&#125;</div><div class="line">    &lt;a href=&quot;javascript:;&quot; class=&quot;popup-trigger&quot;&gt;</div><div class="line">    &lt;!-- 添加 开始 --&gt;</div><div class="line">    &#123;% elseif theme.algolia %&#125;</div><div class="line">    &lt;a href=&quot;javascript:;&quot; class=&quot;popup-trigger&quot;&gt;</div><div class="line">    &lt;!-- 添加 结束 --&gt;</div><div class="line">    &#123;% endif %&#125;</div><div class="line">    &#123;% if theme.menu_icons.enable %&#125;</div><div class="line">        &lt;i class=&quot;menu-item-icon fa fa-search fa-fw&quot;&gt;&lt;/i&gt; &lt;br /&gt;</div><div class="line">    &#123;% endif %&#125;</div><div class="line">    &#123;&#123; __(&apos;menu.search&apos;) &#125;&#125;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/li&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
-<h2 id="注意二"><a href="#注意二" class="headerlink" title="注意二"></a>注意二</h2><p>执行了上述所有操作，就可以看见搜索按钮了，不过点击搜索结果，会报 <code>can&#39;t find source</code>。</p>
-<p>此时，我们需要修改两个地方</p>
-<ul>
-<li>請install npm install hexo-algolia@0.2.0， 然後在站点找到package.json， 把裏面的hexo-algolia， 換成 “hexo-algolia”: “^0.2.0”</li>
-<li><p>去node_modules/hexo-algolia/lib， 找到command.js，加<code>&#39;path&#39;</code>。</p>
-<pre><code>var storedPost = _.pick(data, [&apos;title&apos;, &apos;date&apos;, &apos;slug&apos;, &apos;path&apos;, &apos;content&apos;, &apos;excerpt&apos;, &apos;objectID’]);
-</code></pre></li>
-</ul>
-<h2 id="注意三"><a href="#注意三" class="headerlink" title="注意三"></a>注意三</h2><p>hero版本要求5.0.1版本的</p>
-<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p>点击search 出现在的algolia search界面</p>
-<img src="/resources/images/search.png" width="400" height="400" title="algolia search">
-<p>点击搜索结果，也会有效果，这里就不做展示了。</p>
+        <h1 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h1><p>线程的生命周期：一个线程从创建到消亡的过程。（包括同步时的状态变化）</p>
+<p><img src="/resources/images/threadlifecycle.png" alt="image"></p>
+<ol>
+<li><p>创建状态（new）：当用new操作符创建一个新的线程对象时，该线程处于创建状态。处于创建状态的线程只是一个空的线程对象，系统不为它分配资源。</p>
+</li>
+<li><p>可运行状态（就绪状态Runable）：执行线程的start()方法将为线程分配必须的系统资源，安排其运行，并调用线程体——run()方法，这样就使得该线程处于可运行状态（Runnable）。<br>　　这一状态并不是运行中状态（Running），因为线程也许实际上并未真正运行
+　　</p>
+</li>
+<li><p>运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码</p>
+</li>
+<li><p>阻塞状态（Blocked）：阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：</p>
+<ol>
+<li>等待阻塞：运行的线程执行wait()方法，JVM会把该线程放入等待池中，待调用notify()/notifyAll()唤醒指定的线程或者所有线程，接着会进入锁池，竞争锁，再次获得对象锁才会进入运行状态</li>
+<li>同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池中。</li>
+<li>其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。</li>
+</ol>
+</li>
+<li><p>死亡状态（Dead）：线程执行完了或者因异常退出了run()方法，该线程结束生命周期</p>
+</li>
+</ol>
+<h2 id="speep（）和-wait-的区别"><a href="#speep（）和-wait-的区别" class="headerlink" title="speep（）和 wait()的区别"></a>speep（）和 wait()的区别</h2><ol>
+<li>每个对象都有一个锁来控制同步访问，Synchronized关键字可以和对象的锁交互，来实现同步方法或同步块。<strong>sleep()方法</strong>正在执行的线程主动让出CPU（然后CPU就可以去执行其他任务），在sleep指定时间后CPU再回到该线程继续往下执行(<strong>注意：sleep方法只让出了CPU，而并不会释放同步资源锁，也就是不会释放同步资源！！！</strong>)；<strong>wait()方法</strong>则是指当前线程让自己暂时退让出同步资源锁，以便其他正在等待该资源的线程得到该资源进而运行，只有调用了notify()方法，之前调用wait()的线程才会解除wait状态，可以去参与竞争同步资源锁，进而得到执行。（注意：notify的作用相当于叫醒睡着的人，而并不会给他分配任务，就是说notify只是让之前调用wait的线程有权利重新参与线程的调度）；</li>
+<li>sleep()方法可以在任何地方使用；wait()方法则只能在同步方法或同步块中使用；</li>
+<li>sleep()是线程线程类（Thread）的方法，调用会暂停此线程指定的时间，但监控依然保持，不会释放对象锁，到时间自动恢复；wait()是Object的方法，调用会放弃对象锁，<strong>进入等待队列</strong>，待调用notify()/notifyAll()唤醒指定的线程或者所有线程，<strong>才会进入锁池</strong>，再次获得对象锁才会进入运行状态；<br>。</li>
+</ol>
 
       
     </div>
@@ -485,7 +483,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -494,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/16/Next主题配置/" rel="next" title="Next主题配置">
-                <i class="fa fa-chevron-left"></i> Next主题配置
+              <a href="/2016/12/25/hexo建站时遇到的坑/" rel="next" title="hexo建站时遇到的坑">
+                <i class="fa fa-chevron-left"></i> hexo建站时遇到的坑
               </a>
             
           </div>
@@ -503,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/25/hexo建站时遇到的坑/" rel="prev" title="hexo建站时遇到的坑">
-                hexo建站时遇到的坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -644,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注册Algolia-创建Index"><span class="nav-number">1.</span> <span class="nav-text">注册Algolia,创建Index</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo-Algol插件"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo Algol插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取-Key-更新站点配置"><span class="nav-number">3.</span> <span class="nav-text">获取 Key,更新站点配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新Index"><span class="nav-number">4.</span> <span class="nav-text">更新Index</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新主题配置"><span class="nav-number">5.</span> <span class="nav-text">更新主题配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他注意点"><span class="nav-number">6.</span> <span class="nav-text">其他注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意一"><span class="nav-number">6.1.</span> <span class="nav-text">注意一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意二"><span class="nav-number">6.2.</span> <span class="nav-text">注意二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意三"><span class="nav-number">6.3.</span> <span class="nav-text">注意三</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#成果"><span class="nav-number">7.</span> <span class="nav-text">成果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">1.</span> <span class="nav-text">线程的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#speep（）和-wait-的区别"><span class="nav-number">1.1.</span> <span class="nav-text">speep（）和 wait()的区别</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -775,9 +769,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'cnicetoupp';
-      var disqus_identifier = '2016/12/25/Hexo主题之Algolia搜索集成/';
+      var disqus_identifier = '2017/06/28/2017-6-28-线程的生命周期/';
 
-      var disqus_title = "Hexo主题之Algolia搜索集成";
+      var disqus_title = "线程的生命周期";
 
 
       function run_disqus_script(disqus_script) {
