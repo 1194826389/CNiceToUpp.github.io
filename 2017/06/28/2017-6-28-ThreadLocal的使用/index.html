@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="java,多线程," />
 
 
 
@@ -108,31 +108,19 @@
 
 
 
-<meta name="description" content="第一个坑：设置网站头像编辑 站点配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：
-
-完整的互联网 URI    http://example.com/avtar.png
-站点内的地址    
-头像放置站点目录下的 source/uploads/ 目录下（新建uploads目录若不存在）  配置为：avatar: /uploads/avatar.png
-头像">
+<meta name="description" content="ThreadLocal是什么？线程局部变量(ThreadLocal)其实的功用非常简单，就是为每一个使用该变量的线程都提供一个变量值的副本，是Java中一种较为特殊的线程绑定机制，是每一个线程都可以独立地改变自己的副本，而不会和其它线程的副本冲突
+从线程的角度看，每个线程都保持一个对其线程局部变量副本的隐式引用，只要线程是活动的并且 ThreadLocal 实例是可访问的；在线程消失之后，其线程局">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo建站时遇到的坑">
-<meta property="og:url" content="http://yoursite.com/2016/12/25/hexo建站时遇到的坑/index.html">
+<meta property="og:title" content="ThreadLocal的使用">
+<meta property="og:url" content="http://yoursite.com/2017/06/28/2017-6-28-ThreadLocal的使用/index.html">
 <meta property="og:site_name" content="歇斯底里 摧枯拉朽">
-<meta property="og:description" content="第一个坑：设置网站头像编辑 站点配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：
-
-完整的互联网 URI    http://example.com/avtar.png
-站点内的地址    
-头像放置站点目录下的 source/uploads/ 目录下（新建uploads目录若不存在）  配置为：avatar: /uploads/avatar.png
-头像">
-<meta property="og:updated_time" content="2016-12-25T13:33:09.000Z">
+<meta property="og:description" content="ThreadLocal是什么？线程局部变量(ThreadLocal)其实的功用非常简单，就是为每一个使用该变量的线程都提供一个变量值的副本，是Java中一种较为特殊的线程绑定机制，是每一个线程都可以独立地改变自己的副本，而不会和其它线程的副本冲突
+从线程的角度看，每个线程都保持一个对其线程局部变量副本的隐式引用，只要线程是活动的并且 ThreadLocal 实例是可访问的；在线程消失之后，其线程局">
+<meta property="og:updated_time" content="2017-06-28T04:44:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo建站时遇到的坑">
-<meta name="twitter:description" content="第一个坑：设置网站头像编辑 站点配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：
-
-完整的互联网 URI    http://example.com/avtar.png
-站点内的地址    
-头像放置站点目录下的 source/uploads/ 目录下（新建uploads目录若不存在）  配置为：avatar: /uploads/avatar.png
-头像">
+<meta name="twitter:title" content="ThreadLocal的使用">
+<meta name="twitter:description" content="ThreadLocal是什么？线程局部变量(ThreadLocal)其实的功用非常简单，就是为每一个使用该变量的线程都提供一个变量值的副本，是Java中一种较为特殊的线程绑定机制，是每一个线程都可以独立地改变自己的副本，而不会和其它线程的副本冲突
+从线程的角度看，每个线程都保持一个对其线程局部变量副本的隐式引用，只要线程是活动的并且 ThreadLocal 实例是可访问的；在线程消失之后，其线程局">
 
 
 
@@ -160,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/25/hexo建站时遇到的坑/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/28/2017-6-28-ThreadLocal的使用/"/>
 
 
 
 
 
-  <title> hexo建站时遇到的坑 | 歇斯底里 摧枯拉朽 </title>
+  <title> ThreadLocal的使用 | 歇斯底里 摧枯拉朽 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -335,7 +323,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/hexo建站时遇到的坑/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/28/2017-6-28-ThreadLocal的使用/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="超CniceToUpp">
@@ -359,7 +347,7 @@
             
             
               
-                hexo建站时遇到的坑
+                ThreadLocal的使用
               
             
           </h1>
@@ -372,8 +360,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T19:34:34+08:00">
-                2016-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-28T14:37:07+08:00">
+                2017-06-28
               </time>
             
 
@@ -391,8 +379,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/Java开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Java开发</span>
                   </a>
                 </span>
 
@@ -406,8 +394,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/25/hexo建站时遇到的坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/25/hexo建站时遇到的坑/" itemprop="commentCount"></span>
+                <a href="/2017/06/28/2017-6-28-ThreadLocal的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/28/2017-6-28-ThreadLocal的使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,34 +421,32 @@
       
 
       
-        <h1 id="第一个坑：设置网站头像"><a href="#第一个坑：设置网站头像" class="headerlink" title="第一个坑：设置网站头像"></a>第一个坑：设置网站头像</h1><p>编辑 <code>站点配置文件</code>， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
+        <h3 id="ThreadLocal是什么？"><a href="#ThreadLocal是什么？" class="headerlink" title="ThreadLocal是什么？"></a>ThreadLocal是什么？</h3><p>线程局部变量(ThreadLocal)其实的功用非常简单，就是为每一个使用该变量的线程都提供一个变量值的副本，是Java中一种较为特殊的线程绑定机制，是每一个线程都可以独立地改变自己的副本，而不会和其它线程的副本冲突</p>
+<p>从线程的角度看，每个线程都保持一个对其线程局部变量副本的隐式引用，只要线程是活动的并且 ThreadLocal 实例是可访问的；在线程消失之后，其线程局部实例的所有副本都会被垃圾回收（除非存在对这些副本的其他引用）。</p>
+<p>通过ThreadLocal存取的数据，总是与当前线程相关，也就是说，JVM 为每个运行的线程，绑定了私有的本地实例存取空间，从而为多线程环境常出现的并发访问问题提供了一种隔离机制。</p>
+<p>概括起来说，<strong>对于多线程资源共享的问题，同步机制采用了“以时间换空间”的方式，而ThreadLocal采用了“以空间换时间”的方式。前者仅提供一份变量，让不同的线程排队访问，而后者为每一个线程都提供了一份变量，因此可以同时访问而互不影响。</strong></p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>经典案例，也是常用的ThreadLocal使用方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** </span></div><div class="line"> * 数据库连接管理类 </div><div class="line"> * <span class="doctag">@author</span> 爽 </div><div class="line"> * </div><div class="line"> */  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionManager</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="comment">/** 线程内共享Connection，ThreadLocal通常是全局的，支持泛型 */</span>  </div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ThreadLocal&lt;Connection&gt; threadLocal = <span class="keyword">new</span> ThreadLocal&lt;Connection&gt;();  </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getCurrConnection</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="comment">// 获取当前线程内共享的Connection  </span></div><div class="line">        Connection conn = threadLocal.get();  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            <span class="comment">// 判断连接是否可用  </span></div><div class="line">            <span class="keyword">if</span>(conn == <span class="keyword">null</span> || conn.isClosed()) &#123;  </div><div class="line">                <span class="comment">// 创建新的Connection赋值给conn(略)  </span></div><div class="line">                <span class="comment">// 保存Connection  </span></div><div class="line">                threadLocal.set(conn);  </div><div class="line">            &#125;  </div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;  </div><div class="line">            <span class="comment">// 异常处理  </span></div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> conn;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 关闭当前数据库连接 </div><div class="line">     */  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="comment">// 获取当前线程内共享的Connection  </span></div><div class="line">        Connection conn = threadLocal.get();  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            <span class="comment">// 判断是否已经关闭  </span></div><div class="line">            <span class="keyword">if</span>(conn != <span class="keyword">null</span> &amp;&amp; !conn.isClosed()) &#123;  </div><div class="line">                <span class="comment">// 关闭资源  </span></div><div class="line">                conn.close();  </div><div class="line">                <span class="comment">// 移除Connection  </span></div><div class="line">                threadLocal.remove();  </div><div class="line">                conn = <span class="keyword">null</span>;  </div><div class="line">            &#125;  </div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;  </div><div class="line">            <span class="comment">// 异常处理  </span></div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样处理的好处：</p>
+<p>统一管理Connection；<br>不需要显示传参Connection，代码更优雅；<br>降低耦合性。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>ThreadLocal是如何做到为每一个线程维护变量的副本的呢？<strong>其实实现的思路很简单，在ThreadLocal类中有一个Map，用于存储每一个线程的变量的副本</strong>。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>ThreadLocal使用场合主要解决多线程中数据数据因并发产生不一致问题。ThreadLocal为每个线程的中并发访问的数据提供一个副本，通过访问副本来运行业务，这样的结果是耗费了内存，单大大减少了线程同步所带来性能消耗，也减少了线程并发控制的复杂度。</li>
+</ul>
 <ul>
-<li>完整的互联网 URI    <a href="http://example.com/avtar.png" target="_blank" rel="external">http://example.com/avtar.png</a></li>
-<li>站点内的地址    <ul>
-<li>头像放置<code>站点目录</code>下的 source/uploads/ 目录下（新建uploads目录若不存在）<br>  配置为：avatar: /uploads/avatar.png</li>
-<li>头像放置<code>主题目录</code>下的 source/images/ 目录下<br>  配置为：avatar: /images/avatar.png</li>
+<li>ThreadLocal不能使用原子类型，只能使用Object类型。ThreadLocal的使用比synchronized要简单得多。</li>
 </ul>
-</li>
+<ul>
+<li>ThreadLocal和Synchonized都用于解决多线程并发访问。但是ThreadLocal与synchronized有本质的区别。synchronized是利用锁的机制，使变量或代码块在某一时该只能被一个线程访问。而ThreadLocal为每一个线程都提供了变量的副本，使得每个线程在某一时间访问到的并不是同一个对象，这样就隔离了多个线程对数据的数据共享。而Synchronized却正好相反，它用于在多个线程间通信时能够获得数据共享。<strong>Synchronized用于线程间的数据共享，而ThreadLocal则用于线程间的数据隔离。</strong><br>当然ThreadLocal并不能替代synchronized,<strong>它们处理不同的问题域</strong>。Synchronized用于实现同步机制，比ThreadLocal更加复杂。</li>
 </ul>
-<h1 id="可修改页面中各个插件的配色"><a href="#可修改页面中各个插件的配色" class="headerlink" title="可修改页面中各个插件的配色"></a>可修改页面中各个插件的配色</h1><p><strong>修改代码块的各个颜色</strong></p>
-<p><code>/themes/next/source/css/_common/components/highlight</code></p>
-<p>可以通过修改上述目录下的<code>theme.styl</code>文件和<code>highlight.styl</code>文件的颜色参数值，就可以修改代码块的背景色，前景色，注释的颜色等等。</p>
-<p>显示效果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">int a = 0;</div></pre></td></tr></table></figure>
-<p><strong>修改引用块的各个颜色</strong></p>
-<p><code>/themes/next/source/css/_common/scaffolding</code></p>
-<p><code>/themes/next/source/css/_variables/base.styl</code></p>
-<p>可以通过修改上述目录下的<code>base.styl</code>文件的颜色参数值，就可以修改block quote的border-left等等颜色。</p>
-<blockquote>
-<p>Email-style angle brackets<br>are used for blockquotes.</p>
-<blockquote>
-<p>And, they can be nested.</p>
-</blockquote>
-<h4 id="Headers-in-blockquotes"><a href="#Headers-in-blockquotes" class="headerlink" title="Headers in blockquotes"></a>Headers in blockquotes</h4><ul>
-<li>You can quote a list.</li>
-<li>Etc.</li>
+<ul>
+<li>可以避免参数传递的访问方式</li>
 </ul>
-</blockquote>
+<h3 id="ThreadLocal使用的一般步骤"><a href="#ThreadLocal使用的一般步骤" class="headerlink" title="ThreadLocal使用的一般步骤"></a>ThreadLocal使用的一般步骤</h3><ol>
+<li>在多线程的类（如ThreadDemo类）中，创建一个ThreadLocal对象threadXxx，用来保存线程间需要隔离处理的对象xxx。</li>
+<li>在ThreadDemo类中，创建一个获取要隔离访问的数据的方法getXxx()，在方法中判断，若ThreadLocal对象为null时候，应该new()一个隔离访问类型的对象，并强制转换为要应用的类型。</li>
+<li>在ThreadDemo类的run()方法中，通过getXxx()方法获取要操作的数据，这样可以保证每个线程对应一个数据对象，在任何时刻都操作的是这个对象。</li>
+</ol>
 
       
     </div>
@@ -484,7 +470,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
           
         </div>
       
@@ -493,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/25/Hexo主题之Algolia搜索集成/" rel="next" title="Hexo主题之Algolia搜索集成">
-                <i class="fa fa-chevron-left"></i> Hexo主题之Algolia搜索集成
+              <a href="/2017/06/28/2017-6-28-线程的生命周期/" rel="next" title="线程的生命周期">
+                <i class="fa fa-chevron-left"></i> 线程的生命周期
               </a>
             
           </div>
@@ -502,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/28/2017-6-28-线程池的使用/" rel="prev" title="线程池的使用">
-                线程池的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -643,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个坑：设置网站头像"><span class="nav-number">1.</span> <span class="nav-text">第一个坑：设置网站头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可修改页面中各个插件的配色"><span class="nav-number">2.</span> <span class="nav-text">可修改页面中各个插件的配色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Headers-in-blockquotes"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Headers in blockquotes</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadLocal是什么？"><span class="nav-number">1.</span> <span class="nav-text">ThreadLocal是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">2.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadLocal使用的一般步骤"><span class="nav-number">5.</span> <span class="nav-text">ThreadLocal使用的一般步骤</span></a></li></ol></div>
             
 
           </div>
@@ -774,9 +758,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'cnicetoupp';
-      var disqus_identifier = '2016/12/25/hexo建站时遇到的坑/';
+      var disqus_identifier = '2017/06/28/2017-6-28-ThreadLocal的使用/';
 
-      var disqus_title = "hexo建站时遇到的坑";
+      var disqus_title = "ThreadLocal的使用";
 
 
       function run_disqus_script(disqus_script) {
